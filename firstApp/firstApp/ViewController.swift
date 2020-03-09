@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     
   
 
+    @IBOutlet weak var waterOut: UISwitch!
     
     @IBAction func waterButton(_ sender: UISwitch) {
         if sender.isOn {
@@ -106,7 +107,7 @@ class ViewController: UIViewController {
         prune = 0
         repot = 0
         threat = 0
-        
+        waterOut.setOn(false, animated: true)
         
         
     growBetter.isHidden = true
