@@ -50,6 +50,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var waterOut: UISwitch!
     
+    @IBOutlet weak var fertOut: UISwitch!
+    
+    @IBOutlet weak var pruneOut: UISwitch!
+    
+    @IBOutlet weak var repotOut: UISwitch!
+    
+    @IBOutlet weak var threatOut: UISwitch!
+    
+    
     @IBAction func waterButton(_ sender: UISwitch) {
         if sender.isOn {
                  water = 1
@@ -107,11 +116,17 @@ class ViewController: UIViewController {
         prune = 0
         repot = 0
         threat = 0
+        total = 0
         waterOut.setOn(false, animated: true)
-        
+        fertOut.setOn(false, animated: true)
+        pruneOut.setOn(false, animated: true)
+        repotOut.setOn(false, animated: true)
+        threatOut.setOn(false, animated: true)
         
     growBetter.isHidden = true
-    
+     happyFlower.isHidden = true
+         deadFlower.isHidden = true
+         beginFlower.isHidden = false
         
         
     }
