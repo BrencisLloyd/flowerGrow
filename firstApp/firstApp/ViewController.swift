@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     var prune:Int = 0
     var repot:Int = 0
     var threat:Int = 0
-    var total:Int = Int(arc4random_uniform(5) + 1)
+    var chars:Int = Int(arc4random_uniform(5) + 1)
+    var total:Int = 0
     
     @IBOutlet weak var growBetter: UIImageView!
     
@@ -36,18 +37,16 @@ class ViewController: UIViewController {
     
 //actions
     
-    @IBAction func flowerName(_ sender: UITextField) {
-    }
+  
+    @IBOutlet weak var flowerName: UITextField!
     
     
     
     
     
+    @IBOutlet weak var flowerLabel: UILabel!
     
-    @IBAction func myTotal(_ sender: Any) {
-        if(total) = 
-        
-    }
+  
 
     
     @IBAction func waterButton(_ sender: UISwitch) {
@@ -101,19 +100,38 @@ class ViewController: UIViewController {
     
     
     @IBAction func reset(_ sender: Any) {
+        chars = 0
+        water = 0
+        fert = 0
+        prune = 0
+        repot = 0
+        threat = 0
+        
+        
+        
+    growBetter.isHidden = true
+    
+        
         
     }
     
-//Objects
 
-    
-    
-    
-    
-    
+    @IBAction func Submit(_ sender: Any) {
+       
+            total = water + fert + prune + repot + threat
+        beginFlower.isHidden = true
+        flowerLabel.text = "Your flower name is \(flowerName.text!)"
+             if(total == chars) {
+                happyFlower.isHidden = false
+                    }
+                    else {
+                        happyFlower.isHidden = false
+                    }
+                    
     
     
     
     
 }
 
+}
